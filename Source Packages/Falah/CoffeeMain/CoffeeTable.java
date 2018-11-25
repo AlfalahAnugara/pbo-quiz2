@@ -181,6 +181,11 @@ public class CoffeeTable extends javax.swing.JFrame {
 
         btncancel.setText("Cancel");
         btncancel.setEnabled(false);
+        btncancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncancelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -244,7 +249,9 @@ public class CoffeeTable extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveActionPerformed
-
+        try {
+            
+        }
     
     }//GEN-LAST:event_btnsaveActionPerformed
 
@@ -278,6 +285,11 @@ public class CoffeeTable extends javax.swing.JFrame {
         }
         this.belanja () ;
     }//GEN-LAST:event_btnaddActionPerformed
+
+    private void btncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelActionPerformed
+        newTransaksi() ;
+        this.decId() ;
+    }//GEN-LAST:event_btncancelActionPerformed
 
     /**
      * @param args the command line arguments
