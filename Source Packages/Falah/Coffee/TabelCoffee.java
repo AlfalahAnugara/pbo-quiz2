@@ -14,4 +14,16 @@ public class TabelCoffee extends DefaultTableModel {
     
     // kolom pada String array var berfungsi untuk menyimpan nama kolom
     private String[] kolom ;
+    
+    // Konstruktor
+    public TabelCoffee () {
+        this.kolom = new String [] {
+            "Nama" , "Harga" , "Jumlah"
+        } ;
+    }
+    
+    // KolomNama getter
+    public String[] getKolomNama () {
+        return this.kolom ;
+    }
 }
