@@ -170,6 +170,11 @@ public class CoffeeTable extends javax.swing.JFrame {
 
         btnremove.setText("Remove");
         btnremove.setEnabled(false);
+        btnremove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnremoveActionPerformed(evt);
+            }
+        });
 
         btnsave.setText("Save");
         btnsave.setEnabled(false);
@@ -248,13 +253,33 @@ public class CoffeeTable extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    
     private void btnsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveActionPerformed
         try {
-            
+            // loop setiap tabel
+            for (int i = 0; i < tbModel.getRowCount(); i++) {
+                // menyimpan nama dan jumlah menjadi variable
+                String nama = tbModel.getValueAt (i , 0).toString () ;
+                int jumlah = new Integer (tbModel.getValueAt (i , 2).toString()) ;
+                this.belanja.add (new Item (nama , jumlah)) ;   
+            }
+            // instansiasi kelas Transaksi dengan kode dan committed belanja
+            Transaksi tsk = new Transaksi (this.code , this.belanja) ;
+            // Stringbuilder untuk menangani output Transaksi
+            StringBuilder sbr = new StringBuilder() ;
+            // menambahkan hasil transaksi
+            sbr.append(tsk.prtDetail()) ;
+            // memanggil dialog dengan StringBuilder
+            JOptionPane.showMessageDialog(this , sbr , "Transaksi" , JOptionPane.INFORMATION_MESSAGE) ;
+            // melakukan transaksi baru
+            newTrx () ;
         }
     
     }//GEN-LAST:event_btnsaveActionPerformed
 
+    
+    
     private void btnnewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnewActionPerformed
         this.jmlitem.setText ("1") ;
         this.btnnew.setEnabled (false) ;
@@ -265,6 +290,8 @@ public class CoffeeTable extends javax.swing.JFrame {
         this.textcode.setText (this.setKode()) ;
     }//GEN-LAST:event_btnnewActionPerformed
 
+    
+    
     private void btnaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddActionPerformed
         // mendapat item yang telah dipilih
         String nama = this.itemcombo.getSelectedItem().toString() ;
@@ -286,10 +313,21 @@ public class CoffeeTable extends javax.swing.JFrame {
         this.belanja () ;
     }//GEN-LAST:event_btnaddActionPerformed
 
+    
+    
     private void btncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelActionPerformed
         newTransaksi() ;
         this.decId() ;
     }//GEN-LAST:event_btncancelActionPerformed
+
+    
+    
+    private void btnremoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnremoveActionPerformed
+        
+        if (tblistitems.getSelectedRow() <0) {
+            
+        }
+    }//GEN-LAST:event_btnremoveActionPerformed
 
     /**
      * @param args the command line arguments
