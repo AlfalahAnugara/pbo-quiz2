@@ -299,7 +299,7 @@ public class CoffeeTable extends javax.swing.JFrame {
             // Stringbuilder untuk menangani output Transaksi
             StringBuilder sbr = new StringBuilder() ;
             // menambahkan hasil transaksi
-            sbr.append(tsk.prtDetail()) ;
+            sbr.append(tsk.Pembayaran()) ;
             // memanggil dialog dengan StringBuilder
             JOptionPane.showMessageDialog(this , sbr , "Transaksi" , JOptionPane.INFORMATION_MESSAGE) ;
             // melakukan transaksi baru
