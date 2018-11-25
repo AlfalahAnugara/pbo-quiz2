@@ -25,7 +25,7 @@ public class CoffeeTable extends javax.swing.JFrame {
     // Jtable model
     private DefaultTableModel tbModel ;
     // variable pembelanjaan untuk menampilkan transaksi item
-    private ArrayList<Item> cart = new ArrayList<>() ;
+    private ArrayList<Item> belanja = new ArrayList<>() ;
     
     
     public CoffeeTable () {
@@ -107,6 +107,22 @@ public class CoffeeTable extends javax.swing.JFrame {
         }
     }
     
+    
+    // dapat melakukan transaksi baru jika sudah menyelesaikan transaksi sebelumnya
+    private void newTransaksi () {
+        this.jmlitem.setText(" ") ;
+        this.textcode.setText(" ") ;
+        this.btnnew.setEnabled(true) ;
+        this.btnsave.setEnabled(false) ;
+        this.btncancel.setEnabled(false) ;
+        this.btnadd.setEnabled(false) ;
+        this.btnremove.setEnabled(false) ;
+        this.btnremove.setEnabled(false) ;
+        this.jmlitem.setEnabled(false) ;
+        this.itemcombo.setEnabled(false) ;
+        this.tbModel.setRowCount(0) ;
+        this.belanja.clear() ;
+    }
     
     
     
