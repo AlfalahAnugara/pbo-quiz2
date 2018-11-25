@@ -58,6 +58,7 @@ public class CoffeeTable extends javax.swing.JFrame {
     }
     
     
+    // update fungsi jumlah
     private void updateJumlah (String nama , int add) {
         ArrayList<String> item = new ArrayList<> () ;
         for (int i = 0; i < tbModel.getRowCount(); i++) {
@@ -70,7 +71,70 @@ public class CoffeeTable extends javax.swing.JFrame {
             }
         }
     }
-    @SuppressWarnings("unchecked")
+    
+    
+    // ngecek jika ada item double yang terpilih pada item sebelumnya
+    private boolean isDuplicate (String nama) {
+        boolean result = false ;
+        ArrayList <String> item = new ArrayList<>() ;
+        for (int i = 0; i < tbModel.getRowCount(); i++) {
+            item.add (tbModel.getValueAt(i, 0).toString()) ;
+        }
+        for (String i : item) {
+            if (i.equals(nama)) {
+                result = true ;
+            }
+        }
+        
+        return result ;
+    }
+    
+    
+    // ngecek jika isi tabel kosong
+    private boolean isEmpty() {
+        return this.tblistitems.getModel().getRowCount() <= 0 ;
+    }
+    
+    
+    // mendisable tombol remove dan save jika isi tabel kosong
+    private void belanja() {
+        if (isEmpty()) {
+            this.btnsave.setEnabled(false) ;
+            this.btnremove.setEnabled(false) ;
+        } else {
+            this.btnsave.setEnabled(true) ;
+            this.btnremove.setEnabled(true) ;
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    @SuppressWarnings("unchecked") 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
