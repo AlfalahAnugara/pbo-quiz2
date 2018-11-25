@@ -39,6 +39,12 @@ public class Transaksi {
     public String Pembayaran() {
         setTotal () ;
         String obt = "" ;
-        
+        obt += "Kode\t\t : " + this.kode +"\n" ;
+        obt += "Daftar Belanja : \n" ;
+        for (Item item : this.items) {
+            obt += "\t" + item.getNama() + "(x" + item.getJumlah() + ") : " + item.getTotal() + "\n" ;
+        }
+        obt += "Total\t\t : " + this.total ;
+        return obt ;
     }
 }
