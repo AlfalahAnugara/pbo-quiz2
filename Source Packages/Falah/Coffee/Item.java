@@ -11,7 +11,7 @@ package Falah.Coffee;
  */
 public class Item {
     // variable ini untuk menyimpan nama barang
-    private final String nama ;
+    private String nama ;
     // variable ini untuk menyimpan harga barang
     private float harga ; 
     // dan terakhir variable ini untuk menyimpan jumlah barang
@@ -28,27 +28,35 @@ public class Item {
         this.jumlah = jumlah;
     }
 
+    // getter harga
     public float getHarga() {
         return harga;
     }
-
+    
+    // setter harga
     public void setHarga(float harga) {
         this.harga = harga;
     }
-
+    
+    // getter jumlah
     public int getJumlah() {
         return jumlah;
     }
-
+    
+    // setter jumlah
     public void setJumlah(int jumlah) {
-        this.jumlah = jumlah;
+        this.jumlah = jumlah ;
     }
-
+    
+    // getter nama
     public String getNama() {
         return nama;
     }
     
-    
+    // setter nama
+    public void setNama(String nama) {
+        this.nama = nama ;
+    }
     
 }
         
