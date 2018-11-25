@@ -32,11 +32,12 @@ public class CoffeeTable extends javax.swing.JFrame {
     
     
     public CoffeeTable () {
+        
+        ComboCoffee comboModel = new ComboCoffee () ;
+        this.cbModel = new DefaultComboBoxModel<>(comboModel.getNames().toArray()) ; // set combo items
+        
         TabelCoffee tableModel = new TabelCoffee () ;
         this.tbModel = new DefaultTableModel (tableModel.getKolomNama() , 0)  ; // table kolom nama
-        
-        TabelCoffee comboModel = new TabelCoffee () ;
-        this.cbModel = new DefaultComboBoxModel<>(comboModel.getNames().toArray()) ; // set combo items
         
         initComponents();
     }
