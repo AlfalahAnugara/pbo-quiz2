@@ -5,6 +5,7 @@
  */
 package Falah.Coffee;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -15,8 +16,22 @@ public class ComboCoffee {
     
     private HashMap<String , Float> items = new HashMap<> () ;
     
-    public TabelCoffee () {
-        this.items.put ()
+    public ComboCoffee () {
+        this.items.put ("Gula" , new Float (30000)) ;
+        this.items.put ("Gula" , new Float (10000)) ;
+        this.items.put ("Gula" , new Float (20000)) ;
+    }
+    
+    public ArrayList <String> getNames() {
+        ArrayList <String> obt = new ArrayList<> () ;
+        for (String item : this.items.keySet()) {
+            obt.add (item) ;
+        }
+        return obt ;
+    }
+    
+    public ArrayList <Float> getPrices () {
+        ArrayList <Float> flt = new ArrayList<> () ;
     }
     
 }
