@@ -32,6 +32,14 @@ public class ComboCoffee {
     
     public ArrayList <Float> getPrices () {
         ArrayList <Float> flt = new ArrayList<> () ;
+        for (float item : this.items.values()) {
+            flt.add(item) ;
+        }
+        return flt ;
+    }
+    
+    public void addItem (String nama , float harga) {
+        this.items.put (nama , harga) ;
     }
     
 }
