@@ -234,13 +234,8 @@ public class CoffeeTable extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveActionPerformed
-        this.jmlitem.setText("1") ;
-        this.btnnew.setEnabled(false) ;
-        this.btncancel.setEnabled(true) ;
-        this.btnadd.setEnabled(true) ;
-        this.jmlitem.setEnabled(true) ;
-        this.itemcombo.setEnabled(true) ;
-        this.textcode.setText(this.setKode()) ;
+
+    
     }//GEN-LAST:event_btnsaveActionPerformed
 
     /**
