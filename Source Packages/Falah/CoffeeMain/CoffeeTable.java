@@ -28,24 +28,30 @@ public class CoffeeTable extends javax.swing.JFrame {
     private ArrayList<Item> cart = new ArrayList<>() ;
     
     
-    public CoffeeTable() {
-        TabelCoffee model = new TabelCoffee() ;
+    public CoffeeTable () {
+        TabelCoffee model = new TabelCoffee () ;
         this.tbModel = new DefaultTableModel (model.getKolomNama() , 0)  ; // table kolom nama
         
         initComponents();
     }
     
-    private void incId() {
+    // penambahan id
+    private void incId () {
         this.id += 1 ;
+    }
+    
+    // pengurangan id
+    private void decId () {
+        this.id -= 1 ;
     }
 
     // fungsi code
-    private String setKode() {
+    private String setKode () {
         this.incId() ;
         // tanggal
         String sk = new SimpleDateFormat ("yyMMdd").format(new Date()) ;
-        this.kode = String.format(sk + "%02d" , this.id) ;
-        return kode ;
+        this.code = String.format(sk + "%02d" , this.id) ;
+        return code ;
     }
     
     
