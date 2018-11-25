@@ -329,7 +329,6 @@ public class CoffeeTable extends javax.swing.JFrame {
         String nama = this.itemcombo.getSelectedItem().toString() ;
         // textjml disetting sebagai Integer
         int jumlah = new Integer (this.jmlitem.getText()) ;
-        // instansiasi Item Class
         // disini di cek apakah suatu barang ada yang double atau duplikat
         if (isDuplicate(nama)) {
             updateJumlah (nama , jumlah) ;
@@ -362,6 +361,7 @@ public class CoffeeTable extends javax.swing.JFrame {
             }
             
         }
+        this.belanja() ;
     }//GEN-LAST:event_btnremoveActionPerformed
 
     /**
