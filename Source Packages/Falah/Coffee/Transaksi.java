@@ -47,4 +47,5 @@ public class Transaksi {
         obt += "Total\t\t : " + this.total ;
         return obt ;
     }
+
 }
