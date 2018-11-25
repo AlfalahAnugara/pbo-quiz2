@@ -151,9 +151,19 @@ public class CoffeeTable extends javax.swing.JFrame {
         itemcombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gula", "Kopi", "Susu" }));
 
         btnnew.setText("New");
+        btnnew.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnnewActionPerformed(evt);
+            }
+        });
 
         btnadd.setText("Add");
         btnadd.setEnabled(false);
+        btnadd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnaddActionPerformed(evt);
+            }
+        });
 
         tblistitems.setModel(this.tbmodel);
         jScrollPane1.setViewportView(tblistitems);
@@ -237,6 +247,37 @@ public class CoffeeTable extends javax.swing.JFrame {
 
     
     }//GEN-LAST:event_btnsaveActionPerformed
+
+    private void btnnewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnewActionPerformed
+        this.jmlitem.setText ("1") ;
+        this.btnnew.setEnabled (false) ;
+        this.btncancel.setEnabled (true) ;
+        this.btnadd.setEnabled (true) ;
+        this.jmlitem.setEnabled (true) ;
+        this.itemcombo.setEnabled (true) ;
+        this.textcode.setText (this.setKode()) ;
+    }//GEN-LAST:event_btnnewActionPerformed
+
+    private void btnaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddActionPerformed
+        // mendapat item yang telah dipilih
+        String nama = this.itemcombo.getSelectedItem().toString() ;
+        // textjml disetting sebagai Integer
+        int jumlah = new Integer (this.jmlitem.getText()) ;
+        // instansiasi Item Class
+        Item item = new Item (nama , jumlah) ;
+        // disini di cek apakah suatu barang ada yang double atau duplikat
+        if (isDuplicate(nama)) {
+            updateJumlah (nama , jumlah) ;
+        } else {
+            Object[] obj = {
+                item.getNama() ,
+                item.getHarga() ,
+                item.getJumlah()
+            } ;
+            tbModel.addRow(obj) ;
+        }
+        this.belanja () ;
+    }//GEN-LAST:event_btnaddActionPerformed
 
     /**
      * @param args the command line arguments
