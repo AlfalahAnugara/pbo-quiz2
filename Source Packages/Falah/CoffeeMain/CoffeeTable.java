@@ -323,8 +323,17 @@ public class CoffeeTable extends javax.swing.JFrame {
     
     
     private void btnremoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnremoveActionPerformed
-        
+        // ngecek apakah ada baris yang dipilih
         if (tblistitems.getSelectedRow() <0) {
+            // jika tidak ada , maka akan muncul tulisan seperti ini
+            String sbr = "Pilihlah item yang akan dihapus" ;
+            JOptionPane.showMessageDialog(this , sbr , "Information" , JOptionPane.INFORMATION_MESSAGE) ;  
+        } else {
+            // jika ada baris yg dipilih , maka baris tersebut akan dihapus
+            int count = tblistitems.getSelectedRows().length ;
+            for (int i = 0; i < count; i++) {
+                tbModel.removeRow(tblistitems.getSelectedRow()) ;
+            }
             
         }
     }//GEN-LAST:event_btnremoveActionPerformed
