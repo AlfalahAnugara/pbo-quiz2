@@ -119,6 +119,7 @@
             <StringItem index="2" value="Susu"/>
           </StringArray>
         </Property>
+        <Property name="selectedIndex" type="int" value="-1"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <AuxValues>

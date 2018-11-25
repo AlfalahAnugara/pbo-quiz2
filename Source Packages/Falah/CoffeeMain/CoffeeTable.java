@@ -175,6 +175,7 @@ public class CoffeeTable extends javax.swing.JFrame {
         textcode.setEnabled(false);
 
         itemcombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gula", "Kopi", "Susu" }));
+        itemcombo.setSelectedIndex(-1);
         itemcombo.setEnabled(false);
 
         jmlitem.setEnabled(false);
