@@ -17,7 +17,20 @@ public class Item {
     // dan terakhir variable ini untuk menyimpan jumlah barang
     private int jumlah ; 
     
-    
+    // Konsttuktor
+    public Item(String nama , int jumlah) {
+        this.nama = nama ;
+        this.jumlah = jumlah ;
+        // harga untuk per item nya
+        switch(nama) { 
+            case "Kopi" : this.harga = 10000 ;
+            break ;
+            case "Susu" : this.harga = 20000 ;
+            break ;
+            case "Gula" : this.harga = 30000 ;
+            break ;
         
+        }      
     }
+}
 
