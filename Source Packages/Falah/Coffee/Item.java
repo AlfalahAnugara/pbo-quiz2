@@ -39,25 +39,33 @@ public class Item {
     }
     
     // getter jumlah
-    public int getJumlah() {
+    public int getJumlah () {
         return jumlah;
     }
     
     // setter jumlah
-    public void setJumlah(int jumlah) {
+    public void setJumlah (int jumlah) {
         this.jumlah = jumlah ;
     }
     
     // getter nama
-    public String getNama() {
+    public String getNama () {
         return nama;
     }
     
     // setter nama
-    public void setNama(String nama) {
+    public void setNama (String nama) {
         this.nama = nama ;
     }
     
+    // perkalian harga dan jumlah
+    public float getTotal () {
+        return this.harga * this.jumlah ;
+    }
+    
+    public String toString () {
+        return this.nama ;
+    }
 }
         
 
