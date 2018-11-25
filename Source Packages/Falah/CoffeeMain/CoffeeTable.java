@@ -15,6 +15,7 @@ import java.util.* ;
 import javax.swing.JOptionPane ;
 import javax.swing.table.DefaultTableModel ;
 import Falah.Coffee.* ;
+import javax.swing.DefaultComboBoxModel ;
 
 public class CoffeeTable extends javax.swing.JFrame {
     
@@ -24,6 +25,8 @@ public class CoffeeTable extends javax.swing.JFrame {
     private String code ;
     // Jtable model
     private DefaultTableModel tbModel ;
+    // Jcombobox Model
+    private DefaultComboBoxModel cbModel ;
     // variable pembelanjaan untuk menampilkan transaksi item
     private ArrayList<Item> belanja = new ArrayList<>() ;
     
@@ -148,7 +151,12 @@ public class CoffeeTable extends javax.swing.JFrame {
 
         jLabel2.setText("Items");
 
+        textcode.setEnabled(false);
+
         itemcombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gula", "Kopi", "Susu" }));
+        itemcombo.setEnabled(false);
+
+        jmlitem.setEnabled(false);
 
         btnnew.setText("New");
         btnnew.addActionListener(new java.awt.event.ActionListener() {
@@ -165,7 +173,6 @@ public class CoffeeTable extends javax.swing.JFrame {
             }
         });
 
-        tblistitems.setModel(this.tbmodel);
         jScrollPane1.setViewportView(tblistitems);
 
         btnremove.setText("Remove");
@@ -273,7 +280,9 @@ public class CoffeeTable extends javax.swing.JFrame {
             // memanggil dialog dengan StringBuilder
             JOptionPane.showMessageDialog(this , sbr , "Transaksi" , JOptionPane.INFORMATION_MESSAGE) ;
             // melakukan transaksi baru
-            newTrx () ;
+            newTransaksi () ;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     
     }//GEN-LAST:event_btnsaveActionPerformed
