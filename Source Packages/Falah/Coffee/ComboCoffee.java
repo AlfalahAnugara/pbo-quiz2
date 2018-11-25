@@ -22,7 +22,7 @@ public class ComboCoffee {
         this.items.put ("Gula" , new Float (20000)) ;
     }
     
-    public ArrayList <String> getNames() {
+    public ArrayList<String> getNames() {
         ArrayList <String> obt = new ArrayList<> () ;
         for (String item : this.items.keySet()) {
             obt.add (item) ;
