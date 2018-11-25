@@ -37,6 +37,7 @@ public class CoffeeTable extends javax.swing.JFrame {
         
         TabelCoffee comboModel = new TabelCoffee () ;
         this.cbModel = new DefaultComboBoxModel<>(comboModel.getNames().toArray()) ; // set combo items
+        
         initComponents();
     }
     
@@ -53,7 +54,7 @@ public class CoffeeTable extends javax.swing.JFrame {
     }
     
 
-    // fungsi code
+    //set fungsi code
     private String setKode () {
         this.incId() ;
         // tanggal
@@ -192,6 +193,7 @@ public class CoffeeTable extends javax.swing.JFrame {
             }
         });
 
+        tblistitems.setModel(this.tbModel);
         jScrollPane1.setViewportView(tblistitems);
 
         btnremove.setText("Remove");
@@ -287,8 +289,9 @@ public class CoffeeTable extends javax.swing.JFrame {
             for (int i = 0; i < tbModel.getRowCount(); i++) {
                 // menyimpan nama dan jumlah menjadi variable
                 String nama = tbModel.getValueAt (i , 0).toString () ;
+                float harga = new Float (tbModel.getValueAt(i , 1).toString()) ;
                 int jumlah = new Integer (tbModel.getValueAt (i , 2).toString()) ;
-                this.belanja.add (new Item (nama , jumlah)) ;   
+                this.belanja.add (new Item(nama , harga , jumlah)) ;   
             }
             // instansiasi kelas Transaksi dengan kode dan committed belanja
             Transaksi tsk = new Transaksi (this.code , this.belanja) ;
@@ -326,17 +329,11 @@ public class CoffeeTable extends javax.swing.JFrame {
         // textjml disetting sebagai Integer
         int jumlah = new Integer (this.jmlitem.getText()) ;
         // instansiasi Item Class
-        Item item = new Item (nama , jumlah) ;
         // disini di cek apakah suatu barang ada yang double atau duplikat
         if (isDuplicate(nama)) {
             updateJumlah (nama , jumlah) ;
         } else {
-            Object[] obj = {
-                item.getNama() ,
-                item.getHarga() ,
-                item.getJumlah()
-            } ;
-            tbModel.addRow(obj) ;
+            tbModel.addRow(addItem(nama , jumlah));
         }
         this.belanja () ;
     }//GEN-LAST:event_btnaddActionPerformed
