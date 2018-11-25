@@ -32,9 +32,11 @@ public class CoffeeTable extends javax.swing.JFrame {
     
     
     public CoffeeTable () {
-        TabelCoffee model = new TabelCoffee () ;
-        this.tbModel = new DefaultTableModel (model.getKolomNama() , 0)  ; // table kolom nama
+        TabelCoffee tableModel = new TabelCoffee () ;
+        this.tbModel = new DefaultTableModel (tableModel.getKolomNama() , 0)  ; // table kolom nama
         
+        TabelCoffee comboModel = new TabelCoffee () ;
+        this.cbModel = new DefaultComboBoxModel<>(comboModel.getNames().toArray()) ; // set combo items
         initComponents();
     }
     
@@ -59,6 +61,23 @@ public class CoffeeTable extends javax.swing.JFrame {
         this.code = String.format(sk + "%02d" , this.id) ;
         return code ;
     }
+    
+    private Object[] addItem (String nama , int jumlah) {
+        float harga = 0 ;
+        ComboCoffee items = new ComboCoffee () ;
+        for (int i = 0; i < items.getNames().size(); i++) {
+            if (nama.equalsIgnoreCase(items.getNames().get(i))) {
+                harga = items.getPrices().get(i) ;
+            }
+        }
+        Object[] obj = {
+            nama ,
+            harga ,
+            jumlah ,
+        } ;
+        return obj ;
+    }
+    
     
     
     // update fungsi jumlah
