@@ -9,6 +9,8 @@ package Falah.Coffee;
  *
  * @author MSI Notebook
  */
+
+import java.util.* ;
 public class Transaksi {
     
     // variable code untuk menampilkan kode pembayaran minuman
@@ -18,5 +20,25 @@ public class Transaksi {
     // variable total untuk menampilkan total pembelian minuman
     private float total ; 
     
+    // Konstruktor
+    public Transaksi (String kode , ArrayList<Item> items) {
+        this.kode = kode ;
+        this.items = items ;
+    }
     
+    // total setter
+    public void setTotal () {
+        float total = 0 ;
+        for (Item item : this.items) {
+            total += item.getTotal() ;
+        }
+        this.total = total ;
+    }
+    
+    // output transaksi
+    public String Pembayaran() {
+        setTotal () ;
+        String obt = "" ;
+        
+    }
 }
