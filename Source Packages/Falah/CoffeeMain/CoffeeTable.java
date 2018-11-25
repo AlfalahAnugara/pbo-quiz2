@@ -123,32 +123,7 @@ public class CoffeeTable extends javax.swing.JFrame {
         this.tbModel.setRowCount(0) ;
         this.belanja.clear() ;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     @SuppressWarnings("unchecked") 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -259,7 +234,13 @@ public class CoffeeTable extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveActionPerformed
-        // TODO add your handling code here:
+        this.jmlitem.setText("1") ;
+        this.btnnew.setEnabled(false) ;
+        this.btncancel.setEnabled(true) ;
+        this.btnadd.setEnabled(true) ;
+        this.jmlitem.setEnabled(true) ;
+        this.itemcombo.setEnabled(true) ;
+        this.textcode.setText(this.setKode()) ;
     }//GEN-LAST:event_btnsaveActionPerformed
 
     /**
