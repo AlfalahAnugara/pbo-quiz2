@@ -18,8 +18,8 @@ public class ComboCoffee {
     
     public ComboCoffee () {
         this.items.put ("Gula" , new Float (30000)) ;
-        this.items.put ("Gula" , new Float (10000)) ;
-        this.items.put ("Gula" , new Float (20000)) ;
+        this.items.put ("Kopi" , new Float (10000)) ;
+        this.items.put ("Susu" , new Float (20000)) ;
     }
     
     public ArrayList<String> getNames() {
