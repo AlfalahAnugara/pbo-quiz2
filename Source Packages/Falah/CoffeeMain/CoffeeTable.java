@@ -66,7 +66,7 @@ public class CoffeeTable extends javax.swing.JFrame {
         }
         for (int i = 0; i < item.size(); i++) {
             if (item.get(i).equals(nama)) {
-                tbModel.setValueAt (jumlah+add , i , 2) ;
+                tbModel.setValueAt (jumlah , i , 2) ;
             }
         }
     }
