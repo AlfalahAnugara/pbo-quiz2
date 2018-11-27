@@ -24,6 +24,6 @@ public class TabelCoffee extends DefaultTableModel {
     
     // KolomNama getter
     public String[] getKolomNama () {
-        return this.kolom ;
+        return this.kolom  ;
     }
 }
