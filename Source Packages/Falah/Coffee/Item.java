@@ -22,25 +22,24 @@ public class Item {
         
     }
 
-    public Item(String nama, float harga, int jumlah) {
-        this.nama = nama;
-        this.harga = harga;
-        this.jumlah = jumlah;
+     public Item(String name, float price) {
+        this.nama = name;
+        this.harga = price;
     }
-
+     
+    public Item(String nama , int jumlah) {
+        this.nama = nama ;
+        this.jumlah = jumlah ;
+    } 
+     
     // getter harga
-    public float getHarga() {
-        return harga;
+    public String getNama() {
+        return this.nama ;
     }
     
     // setter harga
-    public void setHarga(float harga) {
-        this.harga = harga;
-    }
-    
-    // getter jumlah
-    public int getJumlah () {
-        return jumlah;
+    public float getHarga() {
+        return this.harga * this.jumlah ;
     }
     
     // setter jumlah
@@ -49,8 +48,8 @@ public class Item {
     }
     
     // getter nama
-    public String getNama () {
-        return nama;
+    public int getJumlah () {
+        return this.jumlah ;
     }
     
     // setter nama
@@ -61,10 +60,7 @@ public class Item {
     // perkalian harga dan jumlah
     public float getTotal () {
         return this.harga * this.jumlah ;
-    }
-    
-    public String toString () {
-        return this.nama ;
+
     }
 }
         
