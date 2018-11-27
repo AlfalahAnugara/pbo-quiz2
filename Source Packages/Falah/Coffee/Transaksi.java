@@ -24,9 +24,9 @@ public class Transaksi {
     
     // Konstruktor
     public Transaksi (String kode , ArrayList<Item> items) {
-        this.items = items ;
         this.kode = kode ;
-
+        this.items = items ;
+        
     }
         
     // total setter
