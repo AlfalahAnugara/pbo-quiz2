@@ -26,4 +26,19 @@ public class TabelCoffee extends DefaultTableModel {
     public String[] getKolomNama () {
         return this.kolom  ;
     }
+    
+    @Override
+    public void setRowCount(int i) {
+        super.setRowCount(0) ;
+    }
+    
+    @Override
+    public void addRow(Object[] os) {
+        super.addRow(os) ;
+    }
+    
+    @Override
+    public void removeRow(int i) {
+        super.removeRow(i) ;
+    }
 }
