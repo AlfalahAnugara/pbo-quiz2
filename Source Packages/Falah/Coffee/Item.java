@@ -13,35 +13,48 @@ public class Item {
     // variable ini untuk menyimpan nama barang
     private final String nama ;
     // variable ini untuk menyimpan harga barang
-    private final float harga ; 
+    private float harga ;
     // dan terakhir variable ini untuk menyimpan jumlah barang
     private int jumlah ; 
-    
+        
     // Konsttuktor
-    public Item(String nama , int harga) {
+    public Item (String nama , int harga) {
         this.nama = nama ;
-        this.harga = harga ;
-    } 
-     
-    // getter nama
-    public String getNama() {
+        this.jumlah = jumlah ;
+        switch (nama) {
+            case "Kopi" : this.harga = 10000 ;
+            break ;
+            case "Gula" : this.harga = 30000 ;
+            break ;
+            case "Susu" : this.harga = 20000 ;
+            break ;
+        }
+    }
+    
+    // nama setter
+    public String getNama () {
         return this.nama ;
     }
     
-    // getter harga
-    public float getHarga() {
+    // harga getter
+    public float getHarga () {
+        return this.harga ;
+    }
+    
+    // hasil perkalian harga dan jumlah
+    public float getTotal () {
         return this.harga * this.jumlah ;
     }
     
-    // setter jumlah
+    // jumlah getter
+    public int getJumlah () {
+        return jumlah ;
+    }
+    
+    // jumlah setter
     public void setJumlah (int jumlah) {
         this.jumlah = jumlah ;
     }
-    
-    // getter jumlah
-    public int getJumlah () {
-        return this.jumlah ;
-    }
-    
-}     
+}
+
 
