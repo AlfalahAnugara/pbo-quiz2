@@ -11,9 +11,10 @@ package Falah.Coffee;
  */
 
 import java.util.* ;
+import java.text.SimpleDateFormat ;
+import java.util.ArrayList ;
 
 public class Transaksi {
-    
     // variable code untuk menampilkan kode pembayaran minuman
     private final String kode ;
     // variable item untuk menampilkan item apa saja yang dibeli
@@ -23,10 +24,11 @@ public class Transaksi {
     
     // Konstruktor
     public Transaksi (String kode , ArrayList<Item> items) {
-        this.kode = kode ;
         this.items = items ;
+        this.kode = kode ;
+
     }
-    
+        
     // total setter
     public void setTotal () {
         float total = 0 ;
