@@ -59,32 +59,18 @@ public class CoffeeTable extends javax.swing.JFrame {
     }
     
     // update fungsi jumlah
-    private void updateJumlah (String nama , int jumlah) {
+    private void updateJumlah (String nama , int add) {
         ArrayList<String> item = new ArrayList<> () ;
         for (int i = 0; i < tbModel.getRowCount(); i++) {
             item.add (tbModel.getValueAt (i , 0).toString()) ;
         }
         for (int i = 0; i < item.size(); i++) {
             if (item.get(i).equals(nama)) {
-                tbModel.setValueAt (jumlah , i , 2) ;
+                int jumlah = new Integer (tbModel.getValueAt(i , 2).toString()) ;
+                tbModel.setValueAt (jumlah + add , i , 2) ;
             }
         }
     }
-    
-    private int getJumlahAt(String nama) {
-        int jumlah = 0 ;
-        ArrayList<String> item = new ArrayList<>() ;
-        for (int i = 0; i < tbModel.getRowCount(); i++) {
-            item.add (tbModel.getValueAt(i , 0).toString()) ;
-        }
-        for (int i = 0; i < item.size(); i++) {
-            if (item.get(i).equals(nama)) {
-                jumlah = new Integer(tbModel.getValueAt(i , 2).toString()) ;
-            }
-        }
-        return jumlah ;
-    }
-    
     
     // ngecek jika ada item double yang terpilih pada item sebelumnya
     private boolean isDuplicate (String nama) {
@@ -280,8 +266,9 @@ public class CoffeeTable extends javax.swing.JFrame {
             for (int i = 0; i < tbModel.getRowCount(); i++) {
                 // menyimpan nama dan jumlah menjadi variable
                 String nama = tbModel.getValueAt (i , 0).toString () ;
+                float harga = new Float (tbModel.getValueAt (0 , 1).toString()) ;
                 int jumlah = new Integer (tbModel.getValueAt (i , 2).toString()) ;
-                this.belanja.add (new Item(nama, jumlah)) ;   
+                this.belanja.add (new Item(nama, jumlah , harga)) ;   
             }
             // instansiasi kelas Transaksi dengan kode dan committed belanja
             Transaksi tsk = new Transaksi (this.code , this.belanja) ;
@@ -315,10 +302,10 @@ public class CoffeeTable extends javax.swing.JFrame {
     
     private void btnaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddActionPerformed
         String nama = this.itemcombo.getSelectedItem().toString();
+        float harga = new Float (this.jmlitem.getText()) ;
         int jumlah  = new Integer(this.jmlitem.getText());
-        Item item = new Item(nama , jumlah );
+        Item item = new Item(nama , jumlah , harga);
         if(isDuplicate(nama)) {
-            int add = getJumlahAt(nama) ;
             updateJumlah(nama , jumlah);
         } else {
             Object[] obj = {
