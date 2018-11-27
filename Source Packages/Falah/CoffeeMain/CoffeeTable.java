@@ -326,7 +326,7 @@ public class CoffeeTable extends javax.swing.JFrame {
                 item.getNama(),
                 item.getHarga(),
                 item.getJumlah()
-            };
+            } ;
             tbModel.addRow(obj);
         }
         this.belanja() ;
