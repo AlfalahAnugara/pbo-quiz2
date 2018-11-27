@@ -60,7 +60,6 @@ public class CoffeeTable extends javax.swing.JFrame {
     
     // update fungsi jumlah
     private void updateJumlah (String nama , int jumlah) {
-        int add = 1 ;
         ArrayList<String> item = new ArrayList<> () ;
         for (int i = 0; i < tbModel.getRowCount(); i++) {
             item.add (tbModel.getValueAt (i , 0).toString()) ;
