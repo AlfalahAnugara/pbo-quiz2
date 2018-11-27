@@ -11,16 +11,23 @@ package Falah.Coffee;
  */
 public class Item {
     // variable ini untuk menyimpan nama barang
-    private final String nama ;
+    private String nama ;
     // variable ini untuk menyimpan harga barang
     private float harga ;
     // dan terakhir variable ini untuk menyimpan jumlah barang
     private int jumlah ; 
         
     // Konsttuktor
-    public Item (String nama , int harga) {
+    
+    public Item (String nama, int jumlah) {
         this.nama = nama ;
         this.jumlah = jumlah ;
+    }
+
+    public Item(String nama, int jumlah, float harga) {
+        this.nama = nama ;
+        this.jumlah = jumlah ;
+        this.harga = harga ;
         switch (nama) {
             case "Kopi" : this.harga = 10000 ;
             break ;
@@ -30,8 +37,12 @@ public class Item {
             break ;
         }
     }
+    // harga setter
+    public void setHarga(float harga) {
+        this.harga = harga ;
+    }
     
-    // nama setter
+    // nama getter
     public String getNama () {
         return this.nama ;
     }
@@ -39,6 +50,10 @@ public class Item {
     // harga getter
     public float getHarga () {
         return this.harga ;
+    }
+    
+    public void setNama (String nama) {
+        this.nama = nama ;
     }
     
     // hasil perkalian harga dan jumlah
@@ -54,6 +69,10 @@ public class Item {
     // jumlah setter
     public void setJumlah (int jumlah) {
         this.jumlah = jumlah ;
+    }
+    
+    public String toString() {
+        return this.nama ;
     }
 }
 
