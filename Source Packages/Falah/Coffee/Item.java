@@ -19,24 +19,15 @@ public class Item {
         
     // Konsttuktor
     
-    public Item (String nama, int jumlah) {
-        this.nama = nama ;
-        this.jumlah = jumlah ;
+    public Item () {
     }
-
+    
     public Item(String nama, int jumlah, float harga) {
         this.nama = nama ;
         this.jumlah = jumlah ;
         this.harga = harga ;
-        switch (nama) {
-            case "Kopi" : this.harga = 10000 ;
-            break ;
-            case "Gula" : this.harga = 30000 ;
-            break ;
-            case "Susu" : this.harga = 20000 ;
-            break ;
-        }
     }
+    
     // harga setter
     public void setHarga(float harga) {
         this.harga = harga ;
