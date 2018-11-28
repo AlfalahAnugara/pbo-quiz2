@@ -5,6 +5,9 @@
  */
 package Falah.Coffee;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  *
  * @author MSI Notebook
@@ -23,7 +26,7 @@ public class ComboModel {
     }
     
     public ArrayList <String> getSemuaNama () {
-        ArrayList<> str = new ArrayList<> () ;
+        ArrayList<String> str = new ArrayList<> () ;
         for (String item : this.items.keySet()) {
             str.add(item) ;
         }
@@ -38,5 +41,7 @@ public class ComboModel {
         return flt ;
     }
     
- 
+    public void addItem(String nama , float harga) {
+        this.items.put(nama , harga) ;
+    }
 }
