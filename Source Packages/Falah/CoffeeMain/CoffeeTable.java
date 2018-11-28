@@ -15,6 +15,7 @@ import java.util.* ;
 import javax.swing.JOptionPane ;
 import javax.swing.table.DefaultTableModel ;
 import Falah.Coffee.* ;
+import javax.swing.DefaultComboBoxModel;
 
 public class CoffeeTable extends javax.swing.JFrame {
     
@@ -25,6 +26,7 @@ public class CoffeeTable extends javax.swing.JFrame {
     // Jtable model
     private DefaultTableModel tbModel ;
     // Jcombobox Model
+    private DefaultComboBoxModel cbModel ;
     // variable pembelanjaan untuk menampilkan transaksi item
     private ArrayList<Item> belanja = new ArrayList<>() ;
     
