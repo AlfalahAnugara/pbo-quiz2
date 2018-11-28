@@ -171,7 +171,7 @@ public class CoffeeTable extends javax.swing.JFrame {
 
         textcode.setEnabled(false);
 
-        itemcombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gula", "Kopi", "Susu" }));
+        itemcombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gula", "Kopi", "Susu", "Malboro", "Tepung", "Gula Merah" }));
         itemcombo.setSelectedIndex(-1);
         itemcombo.setEnabled(false);
 
@@ -288,7 +288,7 @@ public class CoffeeTable extends javax.swing.JFrame {
             for (int i = 0; i < tbModel.getRowCount(); i++) {
                 // menyimpan nama dan jumlah menjadi variable
                 String nama = tbModel.getValueAt (i , 0).toString () ;
-                float harga = new Float (tbModel.getValueAt (0 , 1).toString()) ;
+                float harga = new Float (tbModel.getValueAt (i , 1).toString()) ;
                 int jumlah = new Integer (tbModel.getValueAt (i , 2).toString()) ;
                 this.belanja.add (new Item(nama, jumlah , harga)) ;   
             }
