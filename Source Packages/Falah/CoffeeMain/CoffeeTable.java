@@ -32,6 +32,10 @@ public class CoffeeTable extends javax.swing.JFrame {
     
     
     public CoffeeTable () {
+        
+        ComboModel comboModel = new ComboModel () ;
+        this.cbModel = new DefaultComboBoxModel<> (comboModel.getSemuaNama().toArray()) ;
+        
         TabelCoffee tableModel = new TabelCoffee () ;
         this.tbModel = new DefaultTableModel (tableModel.getKolomNama() , 0)  ; // table kolom nama
         
@@ -48,6 +52,22 @@ public class CoffeeTable extends javax.swing.JFrame {
     // pengurangan id
     private void decId () {
         this.id -= 1 ;
+    }
+    
+    private Object[] addItem(String nama , int jumlah) {
+        float price = 1 ;
+        ComboModel items = new ComboModel() ;
+        for (int i = 0 ; i < item.getSemuaHarga().size(); i++) {
+            if (nama.equalsIgnoreCase(item.getSemuaNama().get())) {
+                
+            }
+        }
+        Object[] obj = {
+            nama ,
+            harga ,
+            price
+        } ;
+        return obj ;
     }
     
 
