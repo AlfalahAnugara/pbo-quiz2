@@ -55,17 +55,17 @@ public class CoffeeTable extends javax.swing.JFrame {
     }
     
     private Object[] addItem(String nama , int jumlah) {
-        float price = 1 ;
+        float harga = 0 ;
         ComboModel items = new ComboModel() ;
-        for (int i = 0 ; i < item.getSemuaHarga().size(); i++) {
-            if (nama.equalsIgnoreCase(item.getSemuaNama().get())) {
-                
+        for (int i = 0 ; i < items.getSemuaHarga().size(); i++) {
+            if (nama.equalsIgnoreCase(items.getSemuaNama().get(i))) {
+                harga = items.getSemuaHarga().get(i) ;
             }
         }
         Object[] obj = {
             nama ,
             harga ,
-            price
+            jumlah
         } ;
         return obj ;
     }
@@ -324,18 +324,11 @@ public class CoffeeTable extends javax.swing.JFrame {
     
     private void btnaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddActionPerformed
         String nama = this.itemcombo.getSelectedItem().toString();
-        float harga = new Float (this.jmlitem.getText()) ;
         int jumlah  = new Integer(this.jmlitem.getText());
-        Item item = new Item(nama , jumlah , harga);
         if(isDuplicate(nama)) {
             updateJumlah(nama , jumlah);
         } else {
-            Object[] obj = {
-                item.getNama(),
-                item.getHarga(),
-                item.getJumlah()
-            } ;
-            tbModel.addRow(obj);
+            tbModel.addRow(addItem(nama , jumlah)) ;
         }
         this.belanja() ;
     }//GEN-LAST:event_btnaddActionPerformed
